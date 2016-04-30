@@ -16,6 +16,11 @@ local function check_member_autorealm(cb_extra, success, result)
           lock_join = 'no',
           antifosh = 'yes',
 	  antiads = 'yes',
+          lock_tag = 'no',
+          lock_link = 'no',
+          lock_gif = 'no',
+          lock_photo = 'no',
+          lock_media = 'no',
 	  lock_name = 'yes',
           lock_photo = 'no',
           lock_member = 'no',
@@ -51,6 +56,11 @@ local function check_member_realm_add(cb_extra, success, result)
 		  antifosh = 'yes',
 		  antiads = 'yes',
 		  lock_name = 'yes',
+          lock_tag = 'no',
+          lock_link = 'no',
+          lock_gif = 'no',
+          lock_photo = 'no',
+          lock_media = 'no
           lock_photo = 'no',
           lock_member = 'no',
           lock_chat = 'no',
@@ -87,6 +97,11 @@ function check_member_group(cb_extra, success, result)
 		  antifosh = 'yes',
 		  antiads = 'yes',
 		  lock_name = 'yes',
+          lock_tag = 'no',
+          lock_link = 'no',
+          lock_gif = 'no',
+          lock_photo = 'no',
+          lock_media = 'no
           lock_photo = 'no',
           lock_member = 'no',
           lock_chat = 'no',
@@ -123,6 +138,11 @@ local function check_member_modadd(cb_extra, success, result)
 		  antifosh = 'yes',
 		  antiads = 'yes',
 		  lock_name = 'yes',
+          lock_tag = 'no',
+          lock_link = 'no',
+          lock_gif = 'no',
+          lock_photo = 'no',
+          lock_media = 'no 
           lock_photo = 'no',
           lock_member = 'no',
           lock_chat = 'no',
@@ -220,7 +240,7 @@ local function show_group_settingsmod(msg, data, target)
     	leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "›Group Settings:\n•••Kick new member with link : "..settings.lock_join.."\n•••Lock group Fosh : "..settings.antifosh.."\n•••Lock group chat : "..settings.lock_chat.."\n•••Lock group ads : "..settings.antiads.."\n•••Lock group name : "..settings.lock_name.."\n•••Lock group photo : "..settings.lock_photo.."\n•••kick new member : "..settings.lock_member.."\n•••Lock leave ban : "..leave_ban.."\n•••flood set on : "..NUM_MSG_MAX.."\n•••Bot can come : "..bots_protection.."                                        ›»Nod32 People Version 7.8 (◉_◉)"
+  local text = "›Group Settings:\n♤LOCK JOIN : "..settings.lock_join.."\n♤LOCK FOSH : "..settings.antifosh.."\n♤LOCK CHAT : "..settings.lock_chat.."\n♤LOCK ADS: "..settings.lock_chat.."\n♤LOCK GIF:  "..settings.lock_chat.."\n♤LOCK GP PHOTOS:  "..settings.lock_chat.."\n♤LOCK TAG:  "..settings.lock_chat.."\n♤LOCK LINKS:  "..settings.lock_chat.."\n♤LOCK MEDIA: "..settings.antiads.."\n♤LOCK NAME : "..settings.lock_name.."\n♤LOCK PHOTO : "..settings.lock_photo.."\n♤LOCK MEMBER : "..settings.lock_member.."\n♤LOCK LEAVE : "..leave_ban.."\n♤FLOODS : "..NUM_MSG_MAX.."\n♤LOCK BOTS : "..bots_protection.."                                        }}}@kingbotpluss{{{"
   return text
 end
 
@@ -323,6 +343,110 @@ save_data(_config.moderation.data, data)
 return 'fosh word has been unlocked'
 end
 end
+local function lock_group_link(msg, data, target)
+if not is_momod(msg) then
+return "For moderators only!"
+end
+local group_link_lock = data[tostring(target)]['settings']['lock_link']
+if group_link_lock == 'yes' then
+return 'links is already locked'
+else
+data[tostring(target)]['settings']['lock_link'] = 'yes'
+save_data(_config.moderation.data, data)
+return 'links has been locked'
+end
+end
+local function unlock_group_link(msg, data, target)
+if not is_momod(msg) then
+return "For moderators only!"
+end
+local group_link_lock = data[tostring(target)]['settings']['lock_link']
+if group_link_lock == 'no' then
+return 'links is already unlocked'
+else
+data[tostring(target)]['settings']['lock_link'] = 'no'
+save_data(_config.moderation.data, data)
+return 'links has been unlocked'
+end
+end
+local function lock_group_photo(msg, data, target)
+if not is_momod(msg) then
+return "For moderators only!"
+end
+local group_photo_lock = data[tostring(target)]['settings']['lock_photo']
+if group_photo_lock == 'yes' then
+return 'photos is already locked'
+else
+data[tostring(target)]['settings']['lock_photo'] = 'yes'
+save_data(_config.moderation.data, data)
+return 'photos has been locked'
+end
+end
+local function unlock_group_photo(msg, data, target)
+if not is_momod(msg) then
+return "For moderators only!"
+end
+local group_photo_lock = data[tostring(target)]['settings']['lock_photo']
+if group_photo_lock == 'no' then
+return 'photos is already unlocked'
+else
+data[tostring(target)]['settings']['lock_photo'] = 'no'
+save_data(_config.moderation.data, data)
+return 'photos has been unlocked'
+end
+end
+local function lock_group_lock_gif(msg, data, target)
+if not is_momod(msg) then
+return "For moderators only!"
+end
+local group_gif_lock = data[tostring(target)]['settings']['lock_gif']
+if group_gif_lock == 'yes' then
+return 'gif is already locked'
+else
+data[tostring(target)]['settings']['lock_gif'] = 'yes'
+save_data(_config.moderation.data, data)
+return 'gif has been locked'
+end
+end
+local function unlock_group_gif(msg, data, target)
+if not is_momod(msg) then
+return "For moderators only!"
+end
+local group_gif_lock = data[tostring(target)]['settings']['lock_gif']
+if group_gif_lock == 'no' then
+return 'gif is already unlocked'
+else
+data[tostring(target)]['settings']['lock_gif'] = 'no'
+save_data(_config.moderation.data, data)
+return 'gif has been unlocked'
+end
+end
+local function lock_group_media(msg, data, target)
+if not is_momod(msg) then
+return "For moderators only!"
+end
+local group_media_lock = data[tostring(target)]['settings']['lock_media']
+if group_media_lock == 'yes' then
+return 'media is already locked'
+else
+data[tostring(target)]['settings']['lock_media'] = 'yes'
+save_data(_config.moderation.data, data)
+return 'media has been locked'
+end
+end
+local function unlock_group_media(msg, data, target)
+if not is_momod(msg) then
+return "For moderators only!"
+end
+local group_media_lock = data[tostring(target)]['settings']['lock_media']
+if group_media_lock == 'no' then
+return 'media is already unlocked'
+else
+data[tostring(target)]['settings']['lock_media'] = 'no'
+save_data(_config.moderation.data, data)
+return 'media has been unlocked'
+end
+end
 local function lock_group_join(msg, data, target)
 if not is_momod(msg) then
 return "For moderators only!"
@@ -373,6 +497,32 @@ else
 data[tostring(target)]['settings']['antiads'] = 'no'
 save_data(_config.moderation.data, data)
 return 'ads has been unlocked'
+end
+end
+local function lock_group_tag(msg, data, target)
+if not is_momod(msg) then
+return "For moderators only!"
+end
+local group_tag_lock = data[tostring(target)]['settings']['lock_tag']
+if group_tag_lock == 'yes' then
+return 'tags is already locked'
+else
+data[tostring(target)]['settings']['lock_tag'] = 'yes'
+save_data(_config.moderation.data, data)
+return 'tags has been locked'
+end
+end
+local function unlock_group_tag(msg, data, target)
+if not is_momod(msg) then
+return "For moderators only!"
+end
+local group_tag_lock = data[tostring(target)]['settings']['lock_tag']
+if group_tag_lock == 'no' then
+return 'tags is already unlocked'
+else
+data[tostring(target)]['settings']['lock_tag'] = 'no'
+save_data(_config.moderation.data, data)
+return 'tags has been unlocked'
 end
 end
 local function lock_group_namemod(msg, data, target)
@@ -1082,6 +1232,26 @@ local function run(msg, matches)
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked chat ")
         return lock_group_chat(msg, data, target)
       end
+      if matches[2] == 'tag' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked tag ")
+        return lock_group_tag(msg, data, target)
+      end
+      if matches[2] == 'gif' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked gif ")
+        return lock_group_gif(msg, data, target)
+      end
+      if matches[2] == 'photo' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked photo ")
+        return lock_group_photo(msg, data, target)
+      end
+      if matches[2] == 'media' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked media ")
+        return lock_group_media(msg, data, target)
+      end
+      if matches[2] == 'link' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked link ")
+        return lock_group_link(msg, data, target)
+      end    
       if matches[2] == 'bots' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked bots ")
         return lock_group_bots(msg, data, target)
@@ -1129,6 +1299,26 @@ local function run(msg, matches)
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked ads ")
         return unlock_group_ads(msg, data, target)
       end
+      if matches[2] == 'tag' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked tag ")
+        return unlock_group_tag(msg, data, target)
+      end
+      if matches[2] == 'gif' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked gif ")
+        return unlock_group_gif(msg, data, target)
+      end
+      if matches[2] == 'photo' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked photo ")
+        return unlock_group_photo(msg, data, target)
+      end
+      if matches[2] == 'media' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked media ")
+        return unlock_group_media(msg, data, target)
+      end
+      if matches[2] == 'link' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked link ")
+        return unlock_group_link(msg, data, target)
+      end 
       if matches[2] == 'bots' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked bots ")
         return unlock_group_bots(msg, data, target)
@@ -1401,7 +1591,7 @@ return {
 }
 end
 
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
+--Copyright and edit; @mehdisudo
+--Persian Translate; @mehdisudo
+--ch : @kingbotpluss
 --کپی بدون ذکر منبع حرام است--
