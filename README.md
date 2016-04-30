@@ -27,10 +27,5 @@ chmod +x launch.sh
 ./launch.sh
 ```
 __________________________________
-
 SUDOS:@mehdisudo
-
-
-
-
 [MEHDISUDO](https://telegram.me/mehdisudo)
