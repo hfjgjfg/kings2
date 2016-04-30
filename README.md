@@ -1,4 +1,4 @@
-[KING BOT](telegram.me/kingbotpluss)
+[kingbotpluss](telegram.me/kingbotpluss)
 ______________________________________________________________________________________________________________________
 ###  For Install  
 ```bash
