@@ -2,12 +2,6 @@
 ______________________________________________________________________________________________________________________
 [cd server]
 
-
-
-
-
-
-
 sudo apt-get update
 
 sudo apt-get upgrade
@@ -28,4 +22,9 @@ chmod +x launch.sh
 ```
 __________________________________
 SUDOS:@mehdisudo
+
+
+
+
+
 [MEHDISUDO](https://telegram.me/mehdisudo)
