@@ -1,15 +1,17 @@
 do
 
 function run(msg, matches)
-  return 'NOD32-BOT v8'.. VERSION .. [[ 
+  return 'KING BOT v6'.. VERSION .. [[ 
  
-  Developer : @Behroozyaghi
+  Developer : @mehdisudo
   
-  Channel : @Nod32team
+  Channel : @kingbotpluss
   
-  Open git : https://github.com/BH-YAGHI/NOD32-BOT.git
+  Open git : https://github.com/mehdi1313/super1.git
   
-  NOD32 VERSION 8
+  KINGBOT VERSION 6
+
+  😐😐😐😐😐😐😐😐😐
   
   All rights reserved.
   __________________]]
@@ -25,7 +27,3 @@ return {
 }
 
 end
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
