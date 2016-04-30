@@ -1,7 +1,5 @@
 [KING BOT TEAM](https://telegram.me/kingbotpluss)
 ______________________________________________________________________________________________________________________
-[cd server]
-
 sudo apt-get update
 
 sudo apt-get upgrade
@@ -21,10 +19,8 @@ chmod +x launch.sh
 ./launch.sh
 ```
 __________________________________
+
 SUDOS:@mehdisudo
-
-
-
 
 
 [MEHDISUDO](https://telegram.me/mehdisudo)
