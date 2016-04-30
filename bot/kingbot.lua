@@ -233,6 +233,11 @@ function create_config( )
     "location",
     "lock_join",
     "anti_fosh",
+    "lock_tag",
+    "lock_link",
+    "lock_gif",
+    "lock_media",
+    "lock_photo",
     "left_group",
     "owners",
     "plugins",
@@ -249,10 +254,10 @@ function create_config( )
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[
-https://github.com/BH-YAGHI/NOD32-BOT.git
+https://github.com/mehdi1313/kings.git
 
-channel : @Nod32team
-sodu : @behrooZyaghi
+channel : @kingbotpluss
+sodo : @mehdisudo
 ]],
     help_text_realm = [[
 Realm Commands:
@@ -317,14 +322,12 @@ Only sudo users can run this command
 !bc 123456789 Hello !
 This command will send text to [group_id]
 
-ch: @Nod32team
+channel: @kingbotpluss
 
 ]],
     help_text = [[
-NOD32 Commands list :
- 
-1-banhammer list ^
- 
+KING BOT Commands list :
+
 !kick [username|id]
 (کیک کردن شخص (حتی با ریپلی)
 
@@ -339,8 +342,6 @@ NOD32 Commands list :
 
 !kickme
 خروج از گروه
-
-2-Statistics list ^
 
 !who
 لیست+ایدی همه اعضا
@@ -357,8 +358,6 @@ NOD32 Commands list :
 !banlist
 لیست اعضا بن شده
 
-3-Rate Member ^
-
 !setowner [id]
 (id ایجاد مدیر جدید (همراه 
 
@@ -367,8 +366,6 @@ NOD32 Commands list :
 
 !demote [username]
 (برکنار کردن ادمین (همراه ریپلی)
-
-4-General changes ^
 
 !setname [name]
 ایجاد اسم جدید برای گروه
@@ -385,8 +382,6 @@ NOD32 Commands list :
 !setflood [value]
 حساسیت به اسپم در گروه
 
-5-View details ^
-
 !about
 درباره گروه
 
@@ -396,48 +391,16 @@ NOD32 Commands list :
 !settings
 دیدن تنظیمات فعلی گروه
 
-!help
-لیست دستورات ربات
+!lock [*name*photo*link*gif*tag
+*media*leave*member][*fosh*ads]
+[chat*join*photo]
+قفل کردن دستورات بالا 
 
-6-Security Group ^
-
-!lock member 
-قفل ورود اعضا جدید
-
-!lock join
-قفل ورود اعضا جدید توسط لینک
-
-!lock name
-قفل اسم گروه
-
-!lock chat
-قفل چت ممنوع
-
-!lock ads
-قفل تبلیغات
-
-!lock leave
-قفل خروج=بن گروه
-
-!lock fosh
-ممنوع کردن فحش
-
-!lock chat
-قفل چت ممنوع گروه
-
-!antibot enable 
-ورود ربات ها ممنوع
-
-!antibot disable
-ورود ربات ها ازاد
-
-!unlock xxxx
-[*name*leave*member]
-[*fosh*ads]
+!unlock [*name*photo*link*gif*tag
+*media*leave*member][*fosh*ads]
 [chat*join*photo]
 باز کردن دستورات قفل شده
 
-7-Fun time ^
 
 !time country city
 ساعت کشور مورد نظر
@@ -454,8 +417,6 @@ NOD32 Commands list :
  !calc 3+1
  انجام محاسبات ریاضی
 
-8-Service Provider ^
-
 !newlink
 ایجاد لینک جدید
 
@@ -470,12 +431,17 @@ NOD32 Commands list :
 اضافه کردن شخص تو گروه
 (حتما شماره ربات را سیو کرده باشد)
 
-9-Member Profile and Group ^
 !owner
 مدیر گروه
 
 !id
 ایدی شخص مورد نظر
+
+!mstick
+تبدیل عکس به استیکر
+
+!mphoto
+تبدیل استیکر به عکس 
 
 !res [username]
 در اوردن ایدی شخص مورد نظر
@@ -486,31 +452,14 @@ NOD32 Commands list :
 !settings
 تنظیمات فعلی گروه
 
-10-filter word Mode ^
+!addword [text]
+قفل کردن کلمه زشت
 
-!filter set (word)
-اضافه کردن کلمه جدید به لیست
+!remword [text]
+حذف کلمه زشت در لیست
 
-!filter del (word)
-حذف کلمه از لیست
-
-!filter warn (word)
-اخطار به کلمه فیتر شده
-
-!filterlist
-لیست کلمات فیلتر شده
-
-11-bot number & support ^
-
-!botnumber
-دریافت شماره ربات
-
-!support
-دعوت سازنده ربات به گروه
-(در صورت وجود مشکل)
-
-!version
-ورژن ربات
+!badwords
+لیست کلمات زشت
 
 !feedback (text)
 ارسال نظرات به سازنده
@@ -518,9 +467,8 @@ NOD32 Commands list :
 you can use both "/" and "!" 
 .شما میتوانید از ! و / استفاده کنید
 
-channel: @Nod32Team
+channel: @kingbotpluss
 
-G00D LUCK ^_^
 ]]
    }
   serialize_to_file(config, './data/config.lua')
