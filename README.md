@@ -1,7 +1,13 @@
 [KING BOT TEAM](https://telegram.me/kingbotpluss)
 ______________________________________________________________________________________________________________________
-###  For Install  
-```bash
+[cd server]
+
+
+
+
+
+
+
 sudo apt-get update
 
 sudo apt-get upgrade
@@ -10,9 +16,9 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 
 cd $HOME
 
-git clone https://github.com/BH-YAGHI/NOD32-BOT.git
+git clone https://girhub.com/mehdi1313/kings
 
-cd NOD32-BOT
+cd kings
 
 chmod +x launch.sh
 
@@ -21,7 +27,25 @@ chmod +x launch.sh
 ./launch.sh
 ```
 __________________________________
+
+
+
+
+
+
+
+
 SUDOS:@mehdisudo
 
 __________________________________
+
+
+
+
+
+
+
+
+
+
 [MEHDISUDO](https://telegram.me/mehdisudo)
